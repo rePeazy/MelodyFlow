@@ -19,7 +19,7 @@
           <option value="default">Default</option>
           <option value="modern">Modern</option>
         </select>
-        <button class="testSongButton" onclick="cs_change_music('testSong.mp3');">Play Test Song</button>
+        <button class="testSongButton">Play Test Song</button>
         <canvas id="canvas" class="canvas"></canvas>
         <div class="songBar">
             <button id="PPButton" class="PP"></button>
@@ -29,13 +29,5 @@
 
     <script src="Audio Visualizer.js"></script>
     <script src="SongController.js"></script>
-
-    <script> function cs_change_music(music) {
-        document.getElementById("audio").pause();
-        document.getElementById("audio").setAttribute('src', music);
-        document.getElementById("audio").load();
-        document.getElementById("audio").play();
-        }
-    </script>
 </body>
 </html>
