@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatiple" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Melody Flow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="AppTitle">MELODY FLOW</h1>
+
+    <div id="content">
+        <input type="file" id="uploadSong" accept="audio/*">
+        <button class="testSongButton" onclick="cs_change_music('testSong.mp3');">Play Test Song</button>
+
+        <canvas id="canvas" class="canvas"></canvas>
+        <div class="songBar">
+            <button id="PPButton" class="PP"></button>
+        </div>
+        <audio id="audio" controls></audio>
+    </div>
+
+    <script src="Audio Visualizer.js"></script>
+    <script src="SongController.js"></script>
+
+    <script> function cs_change_music(music) {
+        document.getElementById("audio").pause();
+        document.getElementById("audio").setAttribute('src', music);
+        document.getElementById("audio").load();
+        document.getElementById("audio").play();
+        }
+    </script>
+</body>
+</html>
