@@ -13,7 +13,6 @@ PPButton.onclick = function() {
 }
 
 testSongButton.onclick = function() {
-    audio.pause();
     audio.setAttribute('src', 'testSong.mp3');
     audio.load();
     audio.play();
