@@ -35,7 +35,7 @@ window.onload = function() {
       analyser.connect(context.destination);
   
       analyser.fftSize = fftSizePreset;
-      analyser.maxDecibels = 0;
+      analyser.maxDecibels = -30;
       analyser.minDecibels = -100;
       analyser.smoothingTimeConstant = 0.2;
 
