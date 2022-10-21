@@ -3,7 +3,21 @@ window.onload = function() {
     var file = document.getElementById("uploadSong");
     var audio = document.getElementById("audio");
     var PPButton = document.getElementById("PPButton");
-    
+
+    var canvas = document.getElementById("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var ctx = canvas.getContext("2d");
+
+    var WIDTH = canvas.width;
+    var HEIGHT = canvas.height;
+    var x = 0;
+
+    var fftSizePreset = 2048;
+
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, HEIGHT / 2 - 2.5, (((WIDTH / (fftSizePreset / 2)) / 2) + 1) * (fftSizePreset / 2), 5);
+
     file.onchange = function() {
       var files = this.files;
       audio.src = URL.createObjectURL(files[0]);
@@ -17,18 +31,10 @@ window.onload = function() {
       var src = context.createMediaElementSource(audio);
       var analyser = context.createAnalyser();
   
-      var canvas = document.getElementById("canvas");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      var ctx = canvas.getContext("2d");
-
-      var WIDTH = canvas.width;
-      var HEIGHT = canvas.height;
-  
       src.connect(analyser);
       analyser.connect(context.destination);
   
-      analyser.fftSize = 2048;
+      analyser.fftSize = fftSizePreset;
       analyser.maxDecibels = 0;
       analyser.minDecibels = -100;
       analyser.smoothingTimeConstant = 0;
@@ -38,7 +44,7 @@ window.onload = function() {
   
       var barWidth = (WIDTH / bufferLength) / 2;
       var barHeight;
-      var x = 0;
+      var barHeight2;
 
       function renderFrame() {
         requestAnimationFrame(renderFrame);
