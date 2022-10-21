@@ -13,10 +13,11 @@ window.onload = function() {
     var HEIGHT = canvas.height;
     var x = 0;
 
-    var fftSizePreset = 1024;
+    var fftSizePreset = 2048;
+    var lineHeight = 5;
 
     ctx.fillStyle = "#fff";
-    ctx.fillRect(0, HEIGHT / 2 - 2.5, (WIDTH + 1), 5);
+    ctx.fillRect(0, HEIGHT / 2 - lineHeight / 2, (WIDTH + 1), lineHeight);
 
     file.onchange = function() {
       var files = this.files;
@@ -35,7 +36,7 @@ window.onload = function() {
       analyser.connect(context.destination);
   
       analyser.fftSize = fftSizePreset;
-      analyser.maxDecibels = -30;
+      analyser.maxDecibels = -20;
       analyser.minDecibels = -100;
       analyser.smoothingTimeConstant = 0.2;
 
@@ -56,15 +57,15 @@ window.onload = function() {
         ctx.clearRect(0, 0, WIDTH, HEIGHT)
           
         for (var i = 0; i < bufferLength; i++) {
-          barHeight = dataArray[i] + 5;
-          barHeight2 = dataArray[dataArray.length - i] + 5;
+          barHeight = dataArray[i] + lineHeight;
+          barHeight2 = dataArray[dataArray.length - i] + lineHeight;
           ctx.fillStyle = "#fff";
 
-          ctx.fillRect(x, HEIGHT / 2 + 2.5 - barHeight2, barWidth + 1, barHeight2);
-          ctx.fillRect(x, HEIGHT / 2 - 2.5, barWidth + 1, barHeight2);
+          ctx.fillRect(x, HEIGHT / 2 + lineHeight / 2 - barHeight2, barWidth + 1, barHeight2);
+          ctx.fillRect(x, HEIGHT / 2 - lineHeight / 2, barWidth + 1, barHeight2);
 
-          ctx.fillRect(x + WIDTH / 2, HEIGHT / 2 + 2.5 - barHeight, barWidth + 1, barHeight);
-          ctx.fillRect(x + WIDTH / 2, HEIGHT / 2 - 2.5 , barWidth + 1, barHeight);
+          ctx.fillRect(x + WIDTH / 2, HEIGHT / 2 + lineHeight / 2 - barHeight, barWidth + 1, barHeight);
+          ctx.fillRect(x + WIDTH / 2, HEIGHT / 2 - lineHeight / 2 , barWidth + 1, barHeight);
 
           x += barWidth;
         }
