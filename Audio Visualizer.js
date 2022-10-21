@@ -28,7 +28,7 @@ window.onload = function() {
       src.connect(analyser);
       analyser.connect(context.destination);
   
-      analyser.fftSize = 4096;
+      analyser.fftSize = 2048;
       analyser.maxDecibels = 0;
       analyser.minDecibels = -100;
       analyser.smoothingTimeConstant = 0;

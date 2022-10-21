@@ -1,3 +1,20 @@
+#uploadSong {
+    display: none;
+}
+
+audio {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+
+    display: none;
+}
+
+body {
+    background-color: #181818;
+}
+
 .AppTitle {
     margin-top: 50px;
     padding-left: 0;
@@ -14,18 +31,6 @@
     text-align: center;
 }
 
-#uploadSong {
-    display: none;
-}
-
-.uploadLabel {
-    text-align: center;
-    color: #fff;
-
-    border: #fff;
-    border-radius: 5px;
-}
-
 .canvas {
     padding-left: 0;
     padding-right: 0;
@@ -36,17 +41,23 @@
 }
 
 
-audio {
+.uploadLabel {
     position: fixed;
+    top: 75px;
     left: 10px;
-    bottom: 10px;
-    width: calc(100% - 20px);
+    z-index: 100;
 
-    display: none;
-}
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
 
-body {
-    background-color: #181818;
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    padding: 2px;
+    border: solid #fff;
+    border-radius: 5px;
 }
 
 .testSongButton {
@@ -54,6 +65,18 @@ body {
     top: 50px;
     left: 10px;
     z-index: 100;
+
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+
+    cursor: pointer;
+
+    padding: 2px;
+    border: solid #fff;
+    border-radius: 5px;
+
+    background: none;
 }
 
 .songBar {
