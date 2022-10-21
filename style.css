@@ -93,9 +93,13 @@ body {
 }
 
 .PP {
-    position: relative;
-    left: 50%;
-    top: 25%;
+    margin-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 75%;
 
     height: 50px;
     width: 50px;
@@ -104,4 +108,34 @@ body {
 
     background: url(playButton.png);
     background-size: cover
+}
+
+.ThemeSelect {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding: 2px;
+    border: solid #fff;
+    border-radius: 5px; 
+    background: none;
+
+    position: fixed;
+    top: 100px;
+    left: 175px;
+    z-index: 100;
+}
+
+.ThemeSelectLabel {
+    position: fixed;
+    top: 100px;
+    left: 10px;
+    z-index: 100;
+
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding: 2px;
+    border: solid #fff;
+    border-radius: 5px;
+    background: none;
 }
