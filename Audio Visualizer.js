@@ -13,10 +13,10 @@ window.onload = function() {
     var HEIGHT = canvas.height;
     var x = 0;
 
-    var fftSizePreset = 2048;
+    var fftSizePreset = 1024;
 
     ctx.fillStyle = "#fff";
-    ctx.fillRect(0, HEIGHT / 2 - 2.5, (((WIDTH / (fftSizePreset / 2)) / 2) + 1) * (fftSizePreset / 2), 5);
+    ctx.fillRect(0, HEIGHT / 2 - 2.5, (WIDTH + 1), 5);
 
     file.onchange = function() {
       var files = this.files;
@@ -37,7 +37,7 @@ window.onload = function() {
       analyser.fftSize = fftSizePreset;
       analyser.maxDecibels = 0;
       analyser.minDecibels = -100;
-      analyser.smoothingTimeConstant = 0;
+      analyser.smoothingTimeConstant = 0.2;
 
       var bufferLength = analyser.frequencyBinCount;
       var dataArray = new Uint8Array(bufferLength);
