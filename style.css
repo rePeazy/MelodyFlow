@@ -43,7 +43,7 @@ body {
 
 .uploadLabel {
     position: fixed;
-    top: 75px;
+    top: 50px;
     left: 10px;
     z-index: 100;
 
@@ -62,7 +62,7 @@ body {
 
 .testSongButton {
     position: fixed;
-    top: 50px;
+    top: 25px;
     left: 10px;
     z-index: 100;
 
