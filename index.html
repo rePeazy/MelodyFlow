@@ -7,6 +7,8 @@
 
     <title>Melody Flow</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
 </head>
 
 <body>
@@ -28,10 +30,15 @@
         <button id="testSongButton" class="testSongButton">PLAY TEST SONG</button>
         <canvas id="canvasLine" class="canvas"></canvas>
         <canvas id="canvas" class="canvas"></canvas>
+
         <div class="songBar">
-            <p id="songName"></p>
+            <div id="songCover"></div>
+            <p id="songName">SONGNAME</p>
+            <p id="artistName">ARTISTNAME</p>
+
             <button id="PPButton" class="PP"></button>
         </div>
+
         <audio id="audio" controls></audio>
     </div>
 
