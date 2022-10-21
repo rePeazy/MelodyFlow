@@ -11,13 +11,27 @@ window.onload = function() {
 
     var WIDTH = canvas.width;
     var HEIGHT = canvas.height;
+
+    var canvas2 = document.getElementById("canvas2");
+    canvas2.width = window.innerWidth;
+    canvas2.height = window.innerHeight;
+    var ctx2 = canvas2.getContext("2d");
+
+    var WIDTH2 = canvas2.width;
+    var HEIGHT2 = canvas2.height;
+
     var x = 0;
 
-    var fftSizePreset = 2048;
+    var fftSizePreset = 1024;
     var lineHeight = 5;
 
     ctx.fillStyle = "#fff";
     ctx.fillRect(0, HEIGHT / 2 - lineHeight / 2, (WIDTH + 1), lineHeight);
+
+    //---- Draw Visualizer Line Shadow ----
+    ctx2.fillStyle = "#000";
+    ctx2.fillRect(0, HEIGHT2 / 2 - lineHeight / 2, (WIDTH2 + 1), lineHeight);
+    //--------------------------------
 
     file.onchange = function() {
       var files = this.files;
@@ -55,6 +69,7 @@ window.onload = function() {
         analyser.getByteFrequencyData(dataArray);
         
         ctx.clearRect(0, 0, WIDTH, HEIGHT)
+        ctx2.clearRect(0, 0, WIDTH2, HEIGHT2)
           
         for (var i = 0; i < bufferLength; i++) {
           barHeight = dataArray[i] + lineHeight;
@@ -66,6 +81,16 @@ window.onload = function() {
 
           ctx.fillRect(x + WIDTH / 2, HEIGHT / 2 + lineHeight / 2 - barHeight, barWidth + 1, barHeight);
           ctx.fillRect(x + WIDTH / 2, HEIGHT / 2 - lineHeight / 2 , barWidth + 1, barHeight);
+
+          //---- Draw Visualizer Shadow ----
+          ctx2.fillStyle = "#000";
+
+          ctx2.fillRect(x, HEIGHT2 / 2 + lineHeight / 2 - barHeight2, barWidth + 1, barHeight2);
+          ctx2.fillRect(x, HEIGHT2 / 2 - lineHeight / 2, barWidth + 1, barHeight2);
+
+          ctx2.fillRect(x + WIDTH2 / 2, HEIGHT2 / 2 + lineHeight / 2 - barHeight, barWidth + 1, barHeight);
+          ctx2.fillRect(x + WIDTH2 / 2, HEIGHT2 / 2 - lineHeight / 2 , barWidth + 1, barHeight);
+          //--------------------------------
 
           x += barWidth;
         }

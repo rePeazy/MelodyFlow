@@ -12,7 +12,6 @@ audio {
 }
 
 body {
-    /* background-color: #181818; */
     background-color: #422956;
     background-image: url("https://repeazy.github.io/MelodyFlow/PageArt/bg.png");
 }
@@ -33,8 +32,27 @@ body {
     text-align: center;
 }
 
-#canvas {
-    opacity: 100%;
+.canvas {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    width: 75%;
+}
+
+.canvas2 {
+    margin: 0;
+    position: absolute;
+    top: calc(50% + 10px);
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+
+    filter: blur(5px);
 }
 
 #songName {
@@ -74,13 +92,6 @@ body {
 
     border: solid #fff;
     border-radius: 5px;
-}
-
-.canvas {
-    position: absolute;
-    margin-left: 10%;
-
-    width: 75%;
 }
 
 .uploadLabel {
