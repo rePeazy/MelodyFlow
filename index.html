@@ -13,12 +13,19 @@
     <h1 class="AppTitle">MELODY FLOW</h1>
 
     <div id="content">
-        <input type="file" id="uploadSong" accept="audio/*">
+        <label class="uploadLabel" for="uploadSong">
+            Select Image
+            <br/>
+            <input type="file" id="uploadSong" accept="audio/*">
+            <img src="uploadButton.jpg" alt="Upload Song Here"  width="40" height="40">
+        </label>
+
         <label for="themeSelector">Choose a theme:</label>
         <select name="themeSelector" id="themeSelector">
           <option value="default">Default</option>
           <option value="modern">Modern</option>
         </select>
+        
         <button id="testSongButton" class="testSongButton">Play Test Song</button>
         <canvas id="canvas" class="canvas"></canvas>
         <div class="songBar">
