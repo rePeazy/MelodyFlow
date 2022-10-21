@@ -38,9 +38,6 @@ body {
 }
 
 .canvas {
-    -webkit-filter: drop-shadow(0px 3px 10px rgba(0,0,0,.8));
-    filter: drop-shadow(0px 0px 10px rgba(0,0,0,.8));
-    }
     position: absolute;
     margin-left: 10%;
 
