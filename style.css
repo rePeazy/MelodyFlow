@@ -1,5 +1,8 @@
+
+
 #uploadSong {
     display: none;
+    left: 70px;
 }
 
 audio {
@@ -150,6 +153,19 @@ body {
 
     background-color: #0C0C0C;
 }
+
+.sidebar {
+    top: 5px;
+    bottom: 5px;
+    left: 0px;
+    position: fixed;
+    width: 64px;
+    height: 100%;    
+    background-color: #fff;
+    transform: rotate3d(0, 1, 0, 30deg);
+}
+
+
 
 .PP {
     margin-top: 20px;
