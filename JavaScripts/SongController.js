@@ -47,7 +47,7 @@ PPButton.onclick = function() {
 }
 
 testSongButton.onclick = function() {
-    audio.setAttribute('src', 'PresetAudio/testSong.mp3');
+    audio.setAttribute('src', 'PresetAudio/lilbubblegum - af1.mp3');
     audio.load();
     audio.play();
 }
