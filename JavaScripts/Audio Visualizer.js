@@ -52,7 +52,7 @@ window.onload = function() {
       analyser.fftSize = fftSizePreset;
       analyser.maxDecibels = -20;
       analyser.minDecibels = -100;
-      analyser.smoothingTimeConstant = 0.1;
+      analyser.smoothingTimeConstant = 0.2;
 
       var bufferLength = analyser.frequencyBinCount;
       var dataArray = new Uint8Array(bufferLength);
