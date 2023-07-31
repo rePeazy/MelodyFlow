@@ -44,7 +44,6 @@ body {
     transform: translate(-50%, -50%);
 
     width: 75%;
-    filter: blur(5px);
 }
 
 .canvas2 {
@@ -55,8 +54,6 @@ body {
     margin-right: -50%;
     transform: translate(-50%, -50%);
     width: 75%;
-
-    filter: blur(5px);
 }
 
 #songName {
